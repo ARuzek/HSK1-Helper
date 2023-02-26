@@ -1,0 +1,17 @@
+{
+    "name": "HSK1 Helper", 
+    "short_name": "HSK1 Helper",
+    "manifest_version": 2,
+    "version": "1.0",
+    "description": "Finds all English words in HSK1 vocab and replaces with the Chinese characters",
+    "author": "Amelia Ruzek",
+    "content_scripts":
+    [
+        {
+            "matches": ["*://*/*"],
+            "all_frames": true,
+            "js": ["background.js"],
+            "run_at": "document_end"
+        }
+    ]
+}
