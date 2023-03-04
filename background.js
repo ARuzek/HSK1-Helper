@@ -303,7 +303,7 @@ const translation = new Map ([
 ['cloudy','阴'],
 ['wrong','错'],
 ['happy','快乐'],
-['to','对'],
+//['to','对'],
 ['right','对'],
 ['correct','对']
 ])
