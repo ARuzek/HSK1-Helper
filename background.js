@@ -308,8 +308,23 @@ const translation = new Map ([
 ['correct','对']
 ])
 
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
+
+let randomizedTranslation = new Map();
+for(let i=1; i<=translation.size;) {
+    let word = getRandomInt(translation.size); 
+    randomizedTranslation.set(Array.from(translation.keys())[word] , translation.get(Array.from(translation.keys())[word]));
+    translation.delete(Array.from(translation.keys())[word]);
+
+}
+
+
 for(let i=0; i<text.length; i++) {
-    translation.forEach(function(value, key){
+    randomizedTranslation.forEach(function(value, key){
         if (text[i].innerHTML.includes(" "+key+" ")) {
             text[i].innerHTML = text[i].innerHTML.replace(" "+key+" ", "<span title="+key+">"+" "+value+" "+"</span>");
         }
